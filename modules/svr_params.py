@@ -24,13 +24,13 @@ class SVRParams:
             'epsilon': [0, 0.01, 0.3, 1, 4],
         }
 
-    def to_string(self):
-        return str({
+    def props(self):
+        return {
             'kernel': self.kernel,
             'C': self.C,
             'gamma': self.gamma,
             'epsilon': self.epsilon,
-        })
+        }
 
     def cross(self, params):
         gamma_ratio = np.random.rand()

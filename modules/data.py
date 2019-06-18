@@ -6,7 +6,7 @@ from sample import Sample
 from keys import Keys
 
 class Data:
-    DST_DATA_PATH = '../data/sunspot_preprocessed_2.csv'
+    DST_DATA_PATH = '../data/sunspot_preprocessed.csv'
 
     def __init__(self, series, lookback_steps, train_size):
         self.series = series

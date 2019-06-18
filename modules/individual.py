@@ -25,6 +25,17 @@ class Individual:
 
     def hash(self):
         return sum(self.linear_weight) + sum(self.prev_weights) + sum(self.prev_residual_weights)
+
+    def __str__(self):
+        return str({
+            'input': {
+                'linear': str(self.linear_weight),
+                'previous': str(self.prev_weights),
+                'errors': str(self.prev_residual_weights),
+            },
+            'params': self.params.props(),
+            'fitness': str(self.fitness),
+        })
     
     def set_fitness(self):
         self.fitness = self.model.test()

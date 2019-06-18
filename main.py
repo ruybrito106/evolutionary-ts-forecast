@@ -40,6 +40,7 @@ class Main:
 
     def debug_epoch(self, top):
         print ('Epoch {0} ({1}): {2}'.format(self.cur_epoch, self.population.hash(), top.get_fitness()))
+        print (str(top))
 
     @staticmethod
     def revert_scale(arr, s, u):
@@ -58,6 +59,8 @@ class Main:
             value = self.revert_scale(r[0], s, u)
             pred = self.revert_scale(r[1], s, u)
             errors.append(mean_squared_error(value, pred))
+
+        print (errors)
 
         pyplot.plot(errors, color='red')
         pyplot.show()
